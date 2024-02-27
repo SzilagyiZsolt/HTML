@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="szilagyi.zsolt"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-01-09 11:01:15 de."/>
+        <attribute name="created" value="c3ppbGFneWkuenNvbHQ7QlVSRy0xRTA1LTAyOzIwMjQtMDEtMDk7MTA6MTE6MDUgZGUuOzM1NjU="/>
+        <attribute name="edited" value="c3ppbGFneWkuenNvbHQ7QlVSRy0xRTA1LTAyOzIwMjQtMDEtMDk7MTA6MTU6MjQgZGUuOzM7c3ppbGFneWkuenNvbHQ7QlVSRy0xRTA1LTAyOzIwMjQtMDEtMDk7MDk6MDU6MTYgZGUuO0J1Ym9yw6lrcmVuZGV6w6lzLmZwcmc7OTY5NQ=="/>
+        <attribute name="edited" value="c3ppbGFneWkuenNvbHQ7QlVSRy0xRTA1LTAyOzIwMjQtMDEtMDk7MTE6MDE6MTUgZGUuOzk7MzY4Mg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;K&#233;rem az elemek sz&#225;m&#225;t!&quot;" newline="True"/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <declare name="T" type="Integer" array="True" size="n"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;K&#233;rem a &quot;&amp;i&amp; &quot; elemet!&quot;" newline="True"/>
+                <input variable="T[i]"/>
+            </for>
+            <output expression="&quot;Rendezettlen adatok: &quot;" newline="False"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="T[i]&amp;&quot; &quot;" newline="False"/>
+            </for>
+            <output expression="&quot; &quot;" newline="True"/>
+            <output expression="&quot;Rendezett: &quot;" newline="False"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <declare name="kulcs" type="Integer" array="False" size=""/>
+                <assign variable="kulcs" expression="T[i]"/>
+                <assign variable="j" expression="i-1"/>
+                <while expression="j&gt;=0 &amp; T[j] &gt;kulcs">
+                    <assign variable="T[j+1]" expression="T[j]"/>
+                    <assign variable="j" expression="j-1"/>
+                </while>
+                <assign variable="T[j+1]" expression="kulcs"/>
+            </for>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="T[i]&amp;&quot; &quot;" newline="False"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>

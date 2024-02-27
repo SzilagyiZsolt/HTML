@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="szilagyi.zsolt"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-01-03 09:55:31 de."/>
+        <attribute name="created" value="c3ppbGFneWkuenNvbHQ7QlVSRy0xRTA1LTAyOzIwMjQtMDEtMDM7MDk6NDA6MzkgZGUuOzM1NzY="/>
+        <attribute name="edited" value="c3ppbGFneWkuenNvbHQ7QlVSRy0xRTA1LTAyOzIwMjQtMDEtMDM7MDk6NTU6MzEgZGUuOzE7MzY4Mg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Megsz&#225;mol&#225;s&#13;&#10;&#13;&#10;Adott egy N elem&#369; T sz&#225;msorozat. Hat&#225;rozzuk meg az adott tulajdons&#225;ggal rendelkez&#337; elemek sz&#225;m&#225;t!&#13;&#10;A v&#233;geredm&#233;nyt az 'szamlalo' tartalmazza."/>
+            <declare name="szamlalo" type="Integer" array="False" size=""/>
+            <assign variable="szamlalo" expression="0"/>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <input variable="n"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="t" type="Integer" array="True" size="n"/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <input variable="t[i]"/>
+            </for>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <if expression="t[i]&lt;0">
+                    <then>
+                        <assign variable="szamlalo" expression="szamlalo+1"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <output expression="szamlalo" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

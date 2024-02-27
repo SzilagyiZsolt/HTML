@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="gajdan.edit.ilona"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-01-10 11:02:21 de."/>
+        <attribute name="created" value="Z2FqZGFuLmVkaXQuaWxvbmE7QlVSRy0xRTA1LTE5OzIwMjQtMDEtMTA7MTA6MTE6MjMgZGUuOzM3Mjk="/>
+        <attribute name="edited" value="Z2FqZGFuLmVkaXQuaWxvbmE7QlVSRy0xRTA1LTE5OzIwMjQtMDEtMTA7MTE6MDI6MjEgZGUuOzU7Mzg0MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <output expression="&quot;Adja meg a t&#246;mb sz&#225;m&#225;t&quot;" newline="True"/>
+            <input variable="n"/>
+            <declare name="T" type="Integer" array="True" size="n"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="&quot;K&#233;rem a &quot;&amp;i+1&amp;&quot;. elemet: &quot;" newline="False"/>
+                <input variable="T[i]"/>
+            </for>
+            <declare name="minIndex" type="Integer" array="False" size=""/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <declare name="min" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="n-2" direction="inc" step="1">
+                <assign variable="minIndex" expression="i"/>
+                <for variable="j" start="i+1" end="n-1" direction="inc" step="1">
+                    <if expression="T[j]&lt;T[minIndex]">
+                        <then>
+                            <assign variable="minIndex" expression="j"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+                <if expression="minIndex&lt;&gt;i">
+                    <then>
+                        <declare name="tmp" type="Integer" array="False" size=""/>
+                        <assign variable="tmp" expression="T[i]"/>
+                        <assign variable="T[i]" expression="T[minIndex]"/>
+                        <assign variable="T[minIndex]" expression="tmp"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <for variable="i" start="0" end="n-1" direction="inc" step="1">
+                <output expression="T[i] &amp;&quot;, &quot;" newline="False"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
